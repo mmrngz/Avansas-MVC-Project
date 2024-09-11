@@ -1,0 +1,129 @@
+﻿@model AvansasProject2.MODEL.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align:center"> Ürün Güncelleme Sayfası </h1>
+
+<hr />
+<style>
+    .custom-oval-button {
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+
+    .custom-primary-button, .custom-success-button {
+        border-radius: 20px;
+    }
+
+    .custom-form-container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .custom-form-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .custom-file-input {
+        display: inline-block;
+        padding: .375rem .75rem;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .custom-button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .custom-image-input {
+        display: block;
+        margin: 10px auto;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 custom-form-container">
+        <div>
+            @if (Model.Image == null)
+            {
+                <img style="margin-bottom:20px" src="~/homewwwroot/images/resimyok.jpg" width="200" height="160" />
+            }
+            else
+            {
+                <img style ="margin-bottom:20px" src="@Model.Image" width="200" height="160" />
+            }
+        </div>
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id">
+            <div class="form-group">
+                <label class="custom-form-label" asp-for="Title">Başlık   </label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="custom-form-label" asp-for="Description">Tanım  </label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="custom-form-label" asp-for="Price">Ücret   </label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group custom-image-input">
+                <label class="custom-form-label">Fotoğraf</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="hidden" asp-for="Image" class="custom-file-input" />
+                        <input type="file" asp-for="Image" class="custom-file-input" />
+                        <label asp-for="Image" class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHome" /> Anasayfa
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsStock" /> Stokta
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="custom-form-label" asp-for="CategoryId">Kategori  </label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group custom-button-group">
+                <input type="submit" value="Güncelle " class="btn btn-success custom-oval-button" />
+                <a asp-action="Index" class="btn btn-primary custom-oval-button">Geriye Dön</a>
+            </div>
+        </form>
+        
+    </div>
+    
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

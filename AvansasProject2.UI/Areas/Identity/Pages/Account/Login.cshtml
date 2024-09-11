@@ -1,0 +1,131 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<style>
+
+    /* Başlık etiketi */
+    h1 {
+        text-align: center;
+    }
+
+    /* Form grupları */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Email ve şifre etiketleri */
+    .form-label {
+        font-weight: bold;
+    }
+
+    /* Butonlar */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    /* Unutulan şifre bağlantısı */
+    .forgot-password {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    /* İçeriğin ortalanması */
+    .text-center {
+        text-align: center;
+    }
+
+  
+  
+
+</style>
+<div class="row ">
+
+    <h1>@ViewData["Title"]</h1>
+    <div  class="col-md-4 ">
+
+        <section>
+            <form id="account" method="post">
+                
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email" class="form-label  email-label">Email  </label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email " class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password" class="form-label email-label">Şifre</label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <input asp-for="Input.RememberMe" class="form-check-input" />
+                    <label class="form-check-label" asp-for="Input.RememberMe">Beni Hatırla</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword" class="forgot-password">Şifrenizi mi unuttunuz?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-link">Yeni bir kullanıcı olarak kaydolun</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" class="btn btn-link">E-posta onayını yeniden gönder</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div style="text-align:center" class="col-md-6 offset-md-2">
+        <section>
+            <br>
+            <br>
+            <h7>Başka bir hizmet kullanarak giriş yapın.</h7>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            Dışsal kimlik doğrulama hizmetleri yapılandırılmamış. Dış hizmetler aracılığıyla giriş yapmayı desteklemek için bu ASP.NET uygulamasını yapılandırma ayrıntıları için <a href="https://go.microsoft.com/fwlink/?LinkID=532715">bu makaleyi</a> inceleyin.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="@provider.DisplayName hesabınızı kullanarak giriş yapın">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+   
+</div>
+
+
+<hr /> <!-- Burada yatay çizgi ekledik -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

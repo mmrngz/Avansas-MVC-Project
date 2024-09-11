@@ -1,0 +1,12 @@
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\bin\Debug\net5.0\AvansasProject.MODEL.deps.json
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\bin\Debug\net5.0\AvansasProject.MODEL.dll
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\bin\Debug\net5.0\AvansasProject.MODEL.pdb
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.csproj.AssemblyReference.cache
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.AssemblyInfoInputs.cache
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.AssemblyInfo.cs
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.csproj.CoreCompileInputs.cache
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.dll
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\refint\AvansasProject.MODEL.dll
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\AvansasProject.MODEL.pdb
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.MODEL\obj\Debug\net5.0\ref\AvansasProject.MODEL.dll

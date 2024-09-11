@@ -1,0 +1,57 @@
+﻿/* Detay sayfası stil özelleştirmeleri */
+.product-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+    .product-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.product-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-category {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.product-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,5 @@
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.DAL\obj\Debug\net5.0\AvansasProject.DAL.csproj.AssemblyReference.cache
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.DAL\obj\Debug\net5.0\AvansasProject.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.DAL\obj\Debug\net5.0\AvansasProject.DAL.AssemblyInfoInputs.cache
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.DAL\obj\Debug\net5.0\AvansasProject.DAL.AssemblyInfo.cs
+C:\Users\maran\OneDrive\Masaüstü\MVC Project\AvansasProject\AvansasProject.DAL\obj\Debug\net5.0\AvansasProject.DAL.csproj.CoreCompileInputs.cache

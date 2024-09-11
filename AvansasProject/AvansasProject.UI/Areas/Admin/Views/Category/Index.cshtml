@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AvansasProject.MODEL.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-container">
+   
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>
+                    Kategori İsmi
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="cell-content">
+                            <span class="cell-value">@Html.DisplayFor(modelItem => item.Name)</span>
+                        </div>
+                    </td>
+                    <td>
+                        
+                        <div class="button-group">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="custom-btn edit-btn">  <i class="fas fa-pencil-alt"></i>Güncelle   </a> 
+                            <br>
+                            
+                            <br>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="custom-btn delete-btn">  <i class="fas fa-trash-alt"></i>Sil  </a>
+                            <br>
+                        </div>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    
+   
+    
+    
+    <p class="content">
+
+        <a type="submit" class="custom-buttons" asp-action="Create">Kategori Ekle</a>
+    </p>
+</div>
+

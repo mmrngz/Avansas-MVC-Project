@@ -1,0 +1,122 @@
+﻿
+@using AvansasProject2.MODEL.Models
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AvansasProject.UI</title>
+    <link rel="stylesheet" href="~/Homewwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/site.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/table.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/buttons.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/buttonsdde.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/createform.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/deleteform.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/custom.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/registercss.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/userlist.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/deleteuser.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/detailscard.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/summary.css" />
+    <link rel="stylesheet" href="~/Homewwwroot/css/orderindex.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+    <link href="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/homewwwroot/images/avansaslogo1.png" style="float:left" /></a>
+            <div class="container border-left">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                        </li>
+                        @if(User.IsInRole(Other.Role_Admin))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Admin Paneli
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-area="Admin" asp-action="Index" asp-controller="Category">Kategoriler</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-action="Index" asp-controller="Product">Ürünler</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-action="Index" asp-controller="User">Kullanıcılar</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-action="Index" asp-controller="Order">Siparişler</a>
+
+                                </div>
+                            </li>
+                        }
+                        else if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a style="color:black" class="nav-link " asp-area="Admin" asp-controller="Order" asp-action="Index">Siparişler</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated && HttpContextAccessor.HttpContext.Session.GetInt32(Other.ssShoppingCard) != null)
+                        {
+                            <li style="color:black">
+                                <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="nav-link text-black">
+                                    @{
+                                        var count = HttpContextAccessor.HttpContext.Session.GetInt32(Other.ssShoppingCard);
+                                    }
+                                    <i class="bi bi-cart2"></i>(@count)
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li style="color:black">
+                                <a href="/Identity/Account/Login" class="nav-link text-black">
+
+                                    <i class="bi bi-cart2"></i>(0)
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <form class="form-inline" action="/Customer/Home/Search" method="post" style="margin-right:0.5rem">
+                        <input name="q" type="text" class="form-control mr-2" placeholder="Arama" />
+                        <button class="btn btn-outline-info mr-2" type="submit"><i class="bi bi-search"></i>Ara</button>
+                    </form>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/Homewwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/Homewwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Homewwwroot/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+
+</body>
+</html>
+

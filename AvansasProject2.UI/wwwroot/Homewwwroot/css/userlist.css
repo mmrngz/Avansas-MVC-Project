@@ -1,0 +1,72 @@
+﻿
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .custom-users-container {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .custom-users-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .custom-users-table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+
+        .custom-users-table th,
+        .custom-users-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .custom-users-table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .custom-users-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    .custom-delete-button {
+        border-radius: 20px; /* Oval buton yapmak için */
+        padding: 5px 15px;
+        background-color: #dc3545;
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+
+        .custom-delete-button:hover {
+            background-color: #b02a37;
+        }
+
+    .custom-add-button {
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+.custom-add-button-container {
+    margin-top: 20px;
+    text-align: left; /* Butonu sola yaslamak için */
+}
+
+        .custom-add-button:hover {
+            background-color: #0056b3;
+        }

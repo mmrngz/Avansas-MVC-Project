@@ -1,0 +1,92 @@
+﻿/* Stil sayfanıza ekleyin veya harici bir CSS dosyasına yerleştirin */
+
+/* Form etiketi genel stil */
+.form-label {
+    font-weight: bold;
+}
+
+/* Input alanlarının stillemesi */
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Sipariş özeti listesi */
+.order-summary-list {
+    margin-top: 20px;
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sipariş verme düğmesi */
+.submit-button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+    .submit-button:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+/* Formun ana kartı */
+.order-form-card {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+/* Başlık */
+.card-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Mavi renk başlık için */
+}
+
+/* Sayfa geneli stillemeler */
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Adres bilgileri bölümü arkaplan rengi */
+.address-section {
+    background-color: #f0f0f0; /* Gri arkaplan renk */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Sipariş özeti bölümü arkaplan rengi */
+.order-summary-section {
+    background-color: #fff; /* Beyaz arkaplan renk */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Sipariş özeti liste stillemesi */
+.order-summary-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Toplam tutar bölümü renk */
+.total-amount {
+    font-weight: bold;
+    color: #007bff; /* Mavi renk */
+}
+
+/* Sipariş verme düğmesi stillemesi */
+.submit-button {
+    border-radius: 25px;
+    font-weight: bold;
+}

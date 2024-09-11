@@ -1,0 +1,25 @@
+﻿.custom-buttons {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 30px; /* Daha yüksek bir değer */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+}
+
+ .custom-button:hover {
+        background-color: #2980b9;
+    }
+a.custom-buttons {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    /* Diğer stil ayarları burada devam eder */
+}
+.content {
+    justify-content: flex-end; /* İçeriği yatayda sağa hizalar */
+    text-decoration: none;
+     margin-top: 10px;
+}

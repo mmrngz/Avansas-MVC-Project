@@ -1,0 +1,29 @@
+﻿@model AvansasProject.MODEL.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Kategori Güncelle</h4>
+<hr />
+<div class="row">
+    <div class="name-form-container">
+        <form asp-action="Edit" asp-controller="Category" asp-area="Admin">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="input-container">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-success"></span>
+            </div>
+            <div class="form-group">
+                <input class="button btn btn-success" type="submit" value="Güncelle" />
+                <a class="button" asp-action="Index" asp-controller="Category" asp-area="Admin">Geriye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

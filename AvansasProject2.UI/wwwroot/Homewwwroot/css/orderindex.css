@@ -1,0 +1,138 @@
+﻿/* Sipariş tablosu stilleri */
+.table {
+    font-size: 16px;
+}
+
+    .table th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+/* Adet düğmeleri stilleri */
+.input-group .btn {
+    padding: 0.35rem 0.5rem;
+}
+
+/* Toplam tutar alanı stilleri */
+.bg-dark {
+    background-color: white !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+/* Devam et ve Sipariş Ver düğmeleri */
+.btn-primary {
+    background-color: #007bff;
+    border-color: green;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+    .btn-warning:hover {
+        background-color: #d39e00;
+        border-color: #d39e00;
+    }
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+    .btn-success:hover {
+        background-color: #1e7e34;
+        border-color: #1e7e34;
+    }
+
+/* Genel stiller */
+.container {
+    margin-top: 20px;
+}
+
+.mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dee2e6;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.alert-info {
+    color: #0056b3;
+    background-color: #d6e2ff;
+    border-color: #c7d6e6;
+}
+
+/* Ürün resimleri */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ürün başlığı */
+.table td:nth-child(2) {
+    font-weight: bold;
+}
+
+/* Adet düğmeleri */
+.input-group-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .input-group-btn .btn {
+        margin-top: 5px;
+    }
+
+/* Toplam tutar alanı */
+.table td:last-child {
+    font-weight: bold;
+}
+
+    /* Sepet ile ilgili düğmeler */
+    .table td:last-child a {
+        text-decoration: none;
+        font-weight: bold;
+        color: red;
+    }
+
+        .table td:last-child a:hover {
+            color: darkred;
+        }
+/* Düzenle düğmesi metin rengi */
+.custom-button.btn.btn-success {
+    color: white;
+}
+

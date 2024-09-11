@@ -1,0 +1,78 @@
+﻿@page
+@model RegisterModel
+@using AvansasProject2.MODEL.Models
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+<div class="custom-register-form">
+    <div class="col-md-6 mx-auto">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h4 style="text-align:center">Hesap Oluşturma</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Name">Adınız</label>
+                <input asp-for="Input.Name" class="form-control" />
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Surname">Soyadınız</label>
+                <input asp-for="Input.Surname" class="form-control" />
+                <span asp-validation-for="Input.Surname" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Email">E-Mail</label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Postcode">Posta Kodu</label>
+                <input asp-for="Input.Postcode" class="form-control" />
+                <span asp-validation-for="Input.Postcode" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Address">Adresiniz</label>
+                <input asp-for="Input.Address" class="form-control" />
+                <span asp-validation-for="Input.Address " class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.City">Şehir</label>
+                <input asp-for="Input.City" class="form-control" />
+                <span asp-validation-for="Input.City" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Neighborhood">Mahalle</label>
+                <input asp-for="Input.Neighborhood" class="form-control" />
+                <span asp-validation-for="Input.Neighborhood" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.PhoneNumber">Telefon Numaranız</label>
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Input.PhoneNumber " class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.Password">Parola</label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="custom-form-group">
+                <label asp-for="Input.ConfirmPassword">Parola Tekrar</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            @if(User.IsInRole(Other.Role_Admin))
+            {
+                <div class="custom-form-group">
+                   @Html.DropDownListFor(m=> m.Input.Role,Model.Input.RoleList,"Rol Seç",new {@class="form-control"});
+                </div>
+            }
+
+            <button type="submit" class="btn btn-success"><i class="bi bi-people"></i>  Kayıt Ol</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

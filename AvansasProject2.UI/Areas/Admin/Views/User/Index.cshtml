@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="custom-users-container">
+    <h2 class="custom-users-title">Kullanıcı Listesi</h2>
+
+    <table class="custom-users-table" id="myTable">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id.ToString()" class="custom-delete-button"><i class="bi bi-trash"></i> Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="custom-add-button-container">
+        <a asp-area="Identity" asp-page="/Account/Register" class="custom-add-button"><i class="bi bi-person-circle"></i> Kullanıcı Ekle</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            });
+        });
+    </script>
+}

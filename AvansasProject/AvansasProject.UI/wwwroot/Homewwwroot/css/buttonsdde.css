@@ -1,0 +1,57 @@
+﻿.button-group {
+    display: flex;
+}
+
+    .button-group.custom-btn delete-btn {
+        padding: 15px 30px;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-size: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        margin-right: 80px;
+       
+    }
+.button-group.custom-btn edit-btn {
+    padding: 8px 16px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+.custom-btn {
+    padding: 8px 16px;
+    background-color: navajowhite;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+
+
+    .custom-btn i {
+        margin-right: 6px;
+    }
+
+    .custom-btn:hover {
+        background-color: #2980b9;
+    }
+    

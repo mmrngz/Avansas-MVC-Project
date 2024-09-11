@@ -1,0 +1,45 @@
+﻿@model AvansasProject2.MODEL.Models.ShoppingCard
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <br />
+    <div class="row">
+        <form method="post">
+            <input hidden asp-for="ProductId" />
+            <div class="card product-card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="@Model.Product.Image" class="img-fluid product-image" alt="...">
+                    </div>
+                    <div class="col-md-8 product-details">
+                        <h2 class="product-title">@Model.Product.Title</h2>
+                        <p class="product-description">@Model.Product.Description</p>
+                        <p class="product-price">@Model.Product.Price.ToString("0.00") ₺</p>
+                        <p class="product-stock-label">
+                            Stok:
+                            @if (Model.Product.IsStock)
+                            {
+                                <span class="text-success">Stokta Var</span>
+                            }
+                            else
+                            {
+                                <span class="text-danger">Stokta Yok</span>
+                            }
+                        </p>
+                        <label class="product-stock-label">Adet:</label>
+                        <input asp-for="Count" class="form-control product-count-input" />
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <a asp-action="Index" asp-controller="Home" class="btn back-to-home-button"><i class="bi bi-house-door"></i> Anasayfa</a>
+                    <button type="submit" class="btn add-to-cart-button"><i class="bi bi-cart4"></i>Sepete Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

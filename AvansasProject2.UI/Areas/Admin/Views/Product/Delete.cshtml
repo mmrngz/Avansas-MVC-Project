@@ -1,0 +1,84 @@
+﻿@model AvansasProject2.MODEL.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .custom-oval-button {
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+
+    .custom-danger-button {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .custom-form-container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<h1 class="text-center">Ürün Silme Sayfası</h1>
+
+
+<div class="row justify-content-center">
+    <div class="col-md-6 custom-form-container">
+        <h3 class="text-center">Silmek İstediğinize Emin Misiniz?</h3>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Başlık
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                Tanım
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Fiyat
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                Fotoğraf
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+               Anasayfa
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IsHome)
+            </dd>
+            <dt class="col-sm-2">
+               Stokta
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IsStock)
+            </dd>
+            <dt class="col-sm-2">
+                Kategori
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger custom-oval-button custom-danger-button">Sil</button>
+            <a asp-action="Index" class="btn btn-primary custom-oval-button">Geriye Dön</a>
+        </form>
+    </div>
+</div>

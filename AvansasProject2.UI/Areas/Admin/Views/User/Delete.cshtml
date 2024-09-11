@@ -1,0 +1,27 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="delete-container1">
+    <h2 class="delete-title1">Kaydı Sil</h2>
+    <p class="delete-description1">Bu kaydı silmek istediğinizden emin misiniz?</p>
+    <div class="delete-form1">
+        <dl class="row">
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="delete-btn1">Sil</button>
+            <a asp-action="Index" class="back-btn1">Kayıt Listesine Dön</a>
+        </form>
+    </div>
+</div>

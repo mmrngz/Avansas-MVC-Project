@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AvansasProject2.MODEL.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .oval-button {
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+</style>
+
+<h1 style="text-align:center ">Ürün Listesi</h1>
+<p>
+    <a class="btn btn-success oval-button" asp-action="Create">Ürün Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th>
+                Başlık
+            </th>
+            <th>
+                Anasayfa
+            </th>
+            <th>
+                Stok
+            </th>
+            <th>
+                Kategori
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.Image == null)
+                    {
+                        <img src="~/homewwwroot/images/resimyok.jpg" width="100" height="80" />
+                    }
+                    else
+                    {
+                        <img src="@item.Image" width="100" height="80" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @if (item.IsHome)
+                    {
+                        <span class="btn btn-success oval-button">Evet</span>
+                    }
+                    else
+                    {
+                        <span class="btn btn-danger oval-button">Hayır</span>
+                    }
+                </td>
+                <td>
+                    @if (item.IsStock)
+                    {
+                        <span class="btn btn-success oval-button">Evet</span>
+                    }
+                    else
+                    {
+                        <span class="btn btn-danger oval-button">Hayır</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    <a class="btn btn-primary oval-button" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fa fa-pencil"></i> Güncelle
+                    </a>
+                    <a class="btn btn-info oval-button" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fa fa-info-circle"></i> Detay
+                    </a>
+                    <a class="btn btn-danger oval-button" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fa fa-trash"></i> Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
